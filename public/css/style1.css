@@ -1,0 +1,43 @@
+.Heading{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.Heading h1{
+    font-size: 50px;
+}
+
+.Heading a{
+    font-size: 20px;
+    font-weight: 500;
+    color: white;
+    background-color: blue;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.List{
+    display: flex;
+    flex-direction: column;
+}
+
+.listbarang{
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+    border-radius: 10px;
+    border-style: solid;
+}
