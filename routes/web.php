@@ -19,7 +19,13 @@ use App\Http\Controllers\InventoryController;
 //     return view('index');
 // });
 
-Route::get('/', [InventoryController::class, 'index']);
-Route::get('/inventory/add', [InventoryController::class, 'addInventory']);
-Route::post('/inventory/create', [InventoryController::class, 'createInventory']);
+Route::get('/', [InventoryController::class, 'index'])->name('home');
+
+Route::prefix('inventory')->group(function (){
+    Route::get('/add', [InventoryController::class, 'addInventory'])->name('inventory.add');
+    Route::post('/create', [InventoryController::class, 'createInventory'])->name('inventory.create');
+    Route::get('/{id}/edit', [InventoryController::class, 'editInventory'])->name('inventory.edit');
+    Route::patch('/{id}/update', [InventoryController::class, 'updateInventory'])->name('inventory.update');
+    Route::delete('/{id}/delete', [InventoryController::class, 'deleteInventory'])->name('inventory.delete');
+});
 

@@ -10,7 +10,7 @@
 <body>
     <div class="Heading">
         <h1>List Barang</h1>
-        <a href="/inventory/add" class="add" type="submit">Tambah Barang</a>
+        <a href="{{route('inventory.add')}}" class="add" type="submit">Tambah Barang</a>
     </div>
 
     <div class="List">
@@ -21,6 +21,14 @@
             <div class="card">
                 <h3>{{$inventory->title}}</h3>
                 <p>Banyak barang: {{$inventory->amount}}</p>
+                <div class="tombol">
+                    <form method="post" action="{{route('inventory.delete', ['id' => $inventory->id])}}">
+                        @csrf
+                        @method('delete')
+                        <button type="submit" class="hapus">Hapus</button>
+                    </form>
+                    <a href="{{route('inventory.edit', ['id' => $inventory->id])}}" class="edit">Edit</a>
+                </div>
             </div>
             @endforeach
         </div>
