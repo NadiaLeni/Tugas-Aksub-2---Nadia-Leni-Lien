@@ -22,6 +22,14 @@
                     <label for="amount">Banyak Barang</label>
                     <input type="number" id="amount" name="amount">
                 </div>
+                <div class="tiga">
+                    <label for="name">Kategori</label>
+                    <select name="category_id" id="name">
+                        @foreach ($categories as $category)
+                            <option value="{{ $category->id }}">{{$category->name}}</option>
+                        @endforeach
+                    </select>
+                </div>
                 <input type="submit" class="tombol" value="KIRIM">
             </form>
         </div>

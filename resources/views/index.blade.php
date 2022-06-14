@@ -19,7 +19,7 @@
         <div class="listbarang">
             @foreach ($inventories as $inventory)
             <div class="card">
-                <h3>{{$inventory->title}}</h3>
+                <h3>{{$inventory->title}} - <a href="{{"/{$inventory->category_id}/show"}}">{{$inventory->category->name}}</a></h3>
                 <p>Banyak barang: {{$inventory->amount}}</p>
                 <div class="tombol">
                     <form method="post" action="{{route('inventory.delete', ['id' => $inventory->id])}}">
